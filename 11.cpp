@@ -1,5 +1,12 @@
 //11. Hacer una función en C++ que, dado un BST y un dato, encuentre el antecesor IN ORDER del
 //nodo que contiene dicho dato.
+Node *findMaximum(Node *root){
+    if(!root)
+        return NULL;
+  
+    while(root->right) root = root->right;
+    return root;
+}
 
 Node *inorderPredecessor(Node *root, int K){
   
