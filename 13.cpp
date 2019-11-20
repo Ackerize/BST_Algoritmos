@@ -1,4 +1,5 @@
-//10. Hacer una función en C++ que, dado un BST y un dato, encuentre el sucesor POST ORDER del
+//. Hacer una función en C++ que, dado un BST y un dato, encuentre el antecesor POST ORDER
+del nodo que contiene dicho dato.
 nodo que contiene dicho dato.
 
 Node* postorderPredecessor(Node* root, Node* n) 
