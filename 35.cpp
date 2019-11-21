@@ -1,32 +1,21 @@
 // Hacer una función en C++ que, dada una lista doblemente enlazada, cree un BST con los datos
-// de la lista recorriéndola de 2 en 2.
+// de la lista recorriéndola de 2 en 2. 
 
-Node* sortedListToBST(Node *head)  
+Node * DLLtoBST(Node *inicio, Node* root)  
 {  
-    int n = countNodes(head);  
-    return sortedListToBSTRecur(&head, n);  
-}  
-
-Node* sortedListToBSTRecur(Node **head_ref, int n)  
-{  
-    if (n <= 0)  
-        return NULL;  
-    Node *left = sortedListToBSTRecur(head_ref, n/2);  
-    Node *root = *head_ref;  
-    root->prev = left;  
-    *head_ref = (*head_ref)->next;  
-    root->next = sortedListToBSTRecur(head_ref, n-n/2-1);  
-    return root;  
-}  
-
-int countNodes(Node *head)  
-{  
-    int count = 0;  
-    Node *temp = head;  
+    Node *temp = inicio; 
+    if(inicio == nullptr){
+        return root
+    }
+    int cont = 0
     while(temp)  
     {  
-        temp = temp->next;  
-        count++;  
-    }  
-    return count;  
-}   
+        if(cont%2 == 0){
+            root = insert(root, temp->dato);
+            borrarNodoDLL(temp);
+        }
+        temp = temp->sig;
+        cont++;
+    }
+    DLLtoBST(inicio, root);
+}
